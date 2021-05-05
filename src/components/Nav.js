@@ -6,12 +6,12 @@ import avatar from '../assets/images/avatar.svg'
 
 const Nav = () => {
     return (
-        <div className='nav nav--black'>
+        <div className='nav show nav--black'>
             <button className='nav__toggle'>
 
             </button>
 
-            <img src={logo} alt='logo' className='logo' />
+            <img src={logo} alt='logo' className='nav__logo' />
 
             <nav className='nav__links'>
                 <a href='/' className='nav__link'>
