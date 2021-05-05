@@ -1,10 +1,13 @@
-.App {
-  text-align: center;
+body 
+{
+  margin: 0;
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button
+{
+  background: none;
+  border: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
