@@ -1,14 +1,34 @@
-import React from 'react'
+import { useState } from 'react'
 import '../styles/Nav.scss'
 
 import logo from '../assets/images/logo.jpg'
 import avatar from '../assets/images/avatar.svg'
 
-const Nav = () => {
-    return (
-        <div className='nav show nav--black'>
-            <button className='nav__toggle'>
+import MenuIcon from '@material-ui/icons/Menu'
+import SearchIcon from '@material-ui/icons/Search'
+import NotificationsIcon from '@material-ui/icons/Notifications'
 
+const Nav = () => {
+
+    const [navBlack, setNavBlack] = useState(false)
+    const [toggleMenu, setToggleMenu] = useState(false)
+
+    const transitionNav = () => {
+        window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false)
+    }
+
+    useState(() => {
+        document.addEventListener('scroll', transitionNav)
+    })
+
+    const handleClick = () => {
+        toggleMenu ? setToggleMenu(false) : setToggleMenu(true)
+    }
+
+    return (
+        <div className={`nav ${navBlack || toggleMenu ? 'nav--black' : 'nav__transparent'} ${toggleMenu && 'show'}`}>
+            <button className='nav__toggle' onClick={handleClick}>
+                <MenuIcon />
             </button>
 
             <img src={logo} alt='logo' className='nav__logo' />
@@ -27,16 +47,16 @@ const Nav = () => {
 
             <div className='nav__actions'>
                 <a href='/' className='nav__action'>
-                    Search
+                    <SearchIcon />
                 </a>
                 <a href='/' className='nav__action'>
                     Live
                 </a>
                 <a href='/' className='nav__action'>
-                    Notif
+                    <NotificationsIcon />
                 </a>
                 <a href='/' className='nav__action'>
-                    <img src={avatar} alt='avatar'/>
+                    <img src={avatar} alt='avatar' className='nav__avatar'/>
                 </a>
             </div>
             
