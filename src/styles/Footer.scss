@@ -8,9 +8,13 @@
         text-decoration: none;
         color: inherit;
     }
+    .container {
+        max-width: 980px;
+        margin: 0 auto;
+    }
     &__socials {
         margin-left: -0.22rem;
-        padding: 1.1rem;
+        padding: 1.1rem 0;
         .footer__social {
             margin-right: 1.1rem;
             svg {
@@ -30,5 +34,5 @@
             }
         }
     }
-    
+
 }
