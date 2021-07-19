@@ -4,7 +4,7 @@ import Nav from '../components/Nav'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import Row from '../components/Row'
-
+import Requests from '../data/Requests'
 
 function App() {
 
@@ -16,7 +16,26 @@ function App() {
 
       <Banner />
 
-      <Row />s
+      <Row
+        title='ORIGINAL'
+        fetchUrl={Requests.fetchOriginalMovies}
+        isPoster={true}
+      />
+      
+      <Row
+        title='TRENDS'
+        fetchUrl={Requests.fetchTrending}
+      />
+
+      <Row
+        title='TOP'
+        fetchUrl={Requests.fetchTopRated}
+      />
+
+      <Row
+        title='ACTION'
+        fetchUrl={Requests.fetchActionMovies}
+      />
 
       <Footer />
     

@@ -3,8 +3,8 @@ const API_KEY = "755025c845bfbbb94f0124d873b04f69"
 const BASE_URL = "https://api.themoviedb.org/3"
 
 const Requests = {
-    fetchTrendind: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
-    fetchNetflixOriginals: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
+    fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
+    fetchOriginalMovies: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
     fetchTopRated: `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language-en-US`,
     fetchActionMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&width_genres=28`,
     fetchComedyMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&width_genres=35`,

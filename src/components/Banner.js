@@ -4,7 +4,7 @@ import '../styles/Banner.scss'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
 
-import requests from '../data/Request'
+import Requests from '../data/Requests'
 import axios from 'axios'
 
 const Banner = () => {
@@ -13,7 +13,8 @@ const Banner = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(requests.fetchTrendind)
+            const request = await axios.get(Requests.fetchTrending)
+            
             setMovie(
                 request.data.results[
                     Math.floor(Math.random() * request.data.results.length - 1)
