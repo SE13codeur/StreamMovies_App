@@ -6,10 +6,16 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
 
 import Requests from '../data/Requests'
 import axios from 'axios'
+import QuickView from './QuickView'
 
 const Banner = () => {
 
     const [movie, setMovie] = useState([])
+    const [popup, setPopup] = useState(false)
+
+    const handleClickPopup = () => {
+        popup ? setPopup(false): setPopup(true)
+    }
 
     useEffect(() => {
         async function fetchData() {
@@ -31,7 +37,7 @@ const Banner = () => {
     }
 
     const bannerStyle = {
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
     }
@@ -53,12 +59,19 @@ const Banner = () => {
                     <button className='banner__button banner__button--play'>
                         <PlayArrowIcon /> Lecture
                     </button>
-                    <button className='banner__button'>
+                    <button className='banner__button' onClick={handleClickPopup}>
                         <HelpOutlineIcon /> More infos
                     </button>
                 </div>
             
             </div>
+
+            <QuickView
+                bannerStyle={bannerStyle}
+                movie={movie}
+                handleClickPopup={handleClickPopup}
+                popupStatut={popup}
+            />
         
         </header>
     )
