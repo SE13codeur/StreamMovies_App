@@ -21,13 +21,13 @@ const Nav = () => {
         document.addEventListener('scroll', transitionNav)
     })
 
-    const handleClick = () => {
+    const handleClickToggle = () => {
         toggleMenu ? setToggleMenu(false) : setToggleMenu(true)
     }
 
     return (
         <div className={`nav ${navBlack || toggleMenu ? 'nav--black' : 'nav__transparent'} ${toggleMenu && 'show'}`}>
-            <button className='nav__toggle' onClick={handleClick}>
+            <button className='nav__toggle' onClick={handleClickToggle}>
                 <MenuIcon />
             </button>
 

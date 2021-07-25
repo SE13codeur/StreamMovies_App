@@ -10,12 +10,7 @@ const Row = ({ title, fetchUrl, isPoster }) => {
      useEffect(() => {
         async function fetchData() {
             const request = await axios.get(fetchUrl)
-            
-            setMovies(
-                request.data.results[
-                    Math.floor(Math.random() * request.data.results.length - 1)
-                ]
-            )
+            setMovies(request.data.results)
         }
         fetchData()
     }, [fetchUrl])
