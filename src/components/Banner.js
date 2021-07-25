@@ -6,6 +6,7 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
 
 import Requests from '../data/Requests'
 import axios from 'axios'
+
 import QuickView from './QuickView'
 
 const Banner = () => {
@@ -24,7 +25,7 @@ const Banner = () => {
             setMovie(
                 request.data.results[
                     Math.floor(Math.random() * request.data.results.length - 1)
-                ]
+                ]// display a movie by random except the current movie
             )
         }
         fetchData()
@@ -52,7 +53,7 @@ const Banner = () => {
                     {movie?.title || movie?.name || movie?.original_title}
                 </h1>
                 <p className='banner__description'>
-                    {truncateText(movie?.overview, 100)}
+                    {truncateText(movie?.overview, 101)}
                 </p>
 
                 <div className='banner__buttons'>
