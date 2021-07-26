@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import '../styles/Banner.scss'
-
+import { Link } from 'react-router-dom'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
 
@@ -57,9 +57,12 @@ const Banner = () => {
                 </p>
 
                 <div className='banner__buttons'>
-                    <button className='banner__button banner__button--play'>
-                        <PlayArrowIcon /> Lecture
-                    </button>
+                    <Link to={`/movie/${movie?.id}`}>
+                        <button className='banner__button banner__button--play'>
+                            <PlayArrowIcon /> Lecture
+                        </button>
+                    </Link>
+                    
                     <button className='banner__button' onClick={handleClickPopup}>
                         <HelpOutlineIcon /> More infos
                     </button>

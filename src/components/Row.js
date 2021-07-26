@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import '../styles/Row.scss'
+import { Link } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -23,20 +24,21 @@ const Row = ({ title, fetchUrl, isPoster }) => {
             <div className='row__images'>
                 {movies.map(movie => 
                     <div key={movie.id}>
-                        {isPoster ? (
-                            <img
-                                src={`${baseURL}/${movie.poster_path}`}
+                        <Link to={`/movie/${movie?.id}`}>
+                            {isPoster ? (
+                                <img
+                                    src={`${baseURL}/${movie.poster_path}`}
+                                    className='row__image'
+                                    alt={movie?.title || movie?.name || movie?.original_title}
+                                />
+                            ) : (
+                                <img
+                                src={`${baseURL}/${movie.backdrop_path}`}
                                 className='row__image'
                                 alt={movie?.title || movie?.name || movie?.original_title}
-                            />
-                        ) : (
-                            <img
-                            src={`${baseURL}/${movie.backdrop_path}`}
-                            className='row__image'
-                            alt={movie?.title || movie?.name || movie?.original_title}
-                            />
-                        )
-                            }
+                                />
+                            )}
+                        </Link>
                     </div>
                 )}
             </div>
