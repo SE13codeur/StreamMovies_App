@@ -30,13 +30,13 @@ const Footer = () => {
                 </div>
                 <ul className='footer__links'>
                     <li className='footer__link'>
-                        <a href='/'>Dons en BITCOIN</a>
+                        <a href='/'>Donations in BITCOIN</a>
                     </li>
                     <li className='footer__link'>
-                        <a href='/'>Dons en ETHER</a>
+                        <a href='/'>Donations in ETHER</a>
                     </li>
                     <li className='footer__link'>
-                        <a href='/'>Dons en MONERO</a>
+                        <a href='/'>Donations in MONERO</a>
                     </li>
                 </ul>
                 <div className='footer__copy'>SRK ©2021 by SEB CODEUR</div>
