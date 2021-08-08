@@ -59,7 +59,7 @@ const Banner = () => {
                 <div className='banner__buttons'>
                     <Link to={`/movie/${movie?.id}`}>
                         <button className='banner__button banner__button--play'>
-                            <PlayArrowIcon /> Lecture
+                            <PlayArrowIcon /> Play
                         </button>
                     </Link>
                     

@@ -6,12 +6,10 @@ import Footer from '../components/Footer'
 import Row from '../components/Row'
 import Requests from '../data/Requests'
 import {
-  BrowserRouter as Router,
   Switch,
-  Redirect
-} from 'react-router-dom'
-import { Route } from 'react-router'
- 
+  Redirect,
+  Route
+} from 'react-router-dom' 
 
 import Movie from '../components/Movie'
 
@@ -20,9 +18,9 @@ function App() {
   return (
     <div className="App">
       
-      <Router>
+    
         <Switch>
-          <Route exact='/'>
+          <Route exact path='/'>
             <Nav />
 
             <Banner />
@@ -55,7 +53,7 @@ function App() {
             <Redirect to='/' />
           </Route>
         </Switch>
-      </Router>
+      
 
     </div>
   )
