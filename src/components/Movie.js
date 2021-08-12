@@ -9,7 +9,7 @@ const Movie = () => {
     return (
         <div className='movie'>
             <iframe
-                src={`${id}`}
+                src={`https://www2.tirexo.work/${id}`}
                 title='movie'
                 frameBorder='0'
                 allowFullScreen
