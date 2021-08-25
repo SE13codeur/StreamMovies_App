@@ -9,7 +9,7 @@ const Movie = () => {
     return (
         <div className='movie'>
             <iframe
-                src={`https://www.youtube.com/?/${id}`}
+                src='https://www.justwatch.com'
                 title='movie'
                 frameBorder='0'
                 allowFullScreen
